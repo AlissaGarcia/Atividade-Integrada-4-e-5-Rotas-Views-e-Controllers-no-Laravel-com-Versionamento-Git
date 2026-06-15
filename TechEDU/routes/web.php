@@ -5,6 +5,7 @@ use App\Http\Controllers\PaginaController;
 use App\Http\Controllers\CursoController;
 use App\Http\Controllers\ProdutoController;
 use App\Http\Controllers\DisciplinaController;
+use App\Http\Controllers\AlunoController;
 
 Route::get('/', function () {
     return view('welcome');
@@ -35,3 +36,5 @@ Route::get('/disciplinas', [DisciplinaController::class, 'index']);
 Route::get('/disciplinas/create', [DisciplinaController::class, 'create']);
 Route::post('/disciplinas', [DisciplinaController::class, 'store']);
 Route::get('/disciplinas/{id}', [DisciplinaController::class, 'show']);
+
+Route::resource('alunos', AlunoController::class);
